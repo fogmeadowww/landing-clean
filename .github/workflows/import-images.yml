@@ -1,0 +1,47 @@
+name: Import retro site images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download images from old public website
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error \
+            https://codeload.github.com/fogmeadowww/landing/tar.gz/refs/heads/main \
+            -o /tmp/landing-old.tar.gz
+          mkdir -p /tmp/old-landing
+          tar -xzf /tmp/landing-old.tar.gz -C /tmp/old-landing
+          mkdir -p assets
+          find /tmp/old-landing/landing-main/assets -maxdepth 1 -type f \
+            \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) \
+            -exec cp -t assets -- {} +
+          echo "Copied image files:"
+          find assets -maxdepth 1 -type f \
+            \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) \
+            -printf '%f\n' | sort
+      - name: Commit imported images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A assets/
+          if git diff --cached --quiet; then
+            echo "Images already imported."
+          else
+            git commit -m "Add original site image assets"
+            git push
+          fi
