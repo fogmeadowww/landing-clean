@@ -1,0 +1,91 @@
+{
+  "image": "swimmers.png",
+  "width": 1536,
+  "height": 1024,
+  "columns": 3,
+  "rows": 2,
+  "cellWidth": 512,
+  "cellHeight": 512,
+  "alphaThreshold": 8,
+  "facing": "left",
+  "sprites": [
+    {
+      "id": "goldfish",
+      "x": 117,
+      "y": 184,
+      "width": 281,
+      "height": 211,
+      "rawAlphaBounds": {
+        "x": 24,
+        "y": 23,
+        "width": 488,
+        "height": 489
+      }
+    },
+    {
+      "id": "guppy",
+      "x": 636,
+      "y": 210,
+      "width": 274,
+      "height": 180,
+      "rawAlphaBounds": {
+        "x": 512,
+        "y": 65,
+        "width": 512,
+        "height": 447
+      }
+    },
+    {
+      "id": "angelfish",
+      "x": 1160,
+      "y": 134,
+      "width": 250,
+      "height": 302,
+      "rawAlphaBounds": {
+        "x": 1025,
+        "y": 65,
+        "width": 477,
+        "height": 447
+      }
+    },
+    {
+      "id": "tetra",
+      "x": 109,
+      "y": 689,
+      "width": 286,
+      "height": 146,
+      "rawAlphaBounds": {
+        "x": 25,
+        "y": 513,
+        "width": 487,
+        "height": 511
+      }
+    },
+    {
+      "id": "yellow",
+      "x": 651,
+      "y": 682,
+      "width": 255,
+      "height": 178,
+      "rawAlphaBounds": {
+        "x": 513,
+        "y": 512,
+        "width": 511,
+        "height": 512
+      }
+    },
+    {
+      "id": "snail",
+      "x": 1146,
+      "y": 687,
+      "width": 283,
+      "height": 180,
+      "rawAlphaBounds": {
+        "x": 1024,
+        "y": 521,
+        "width": 496,
+        "height": 468
+      }
+    }
+  ]
+}

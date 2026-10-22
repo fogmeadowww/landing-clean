@@ -1,0 +1,24 @@
+{
+  "imageWidth": 2172,
+  "imageHeight": 724,
+  "sprites": {
+    "handmade": {
+      "x": 54,
+      "y": 238,
+      "width": 638,
+      "height": 243
+    },
+    "construction": {
+      "x": 771,
+      "y": 238,
+      "width": 634,
+      "height": 243
+    },
+    "aquarium": {
+      "x": 1485,
+      "y": 238,
+      "width": 638,
+      "height": 243
+    }
+  }
+}
